@@ -17,8 +17,6 @@ h2 {
 }
 .item {
   background-color: #2e2e2e;
-  /* increase item width */
-  
   padding: 15px;
   border-radius: 8px;
   transition: background-color 0.1s;
