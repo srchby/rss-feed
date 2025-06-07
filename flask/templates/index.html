@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'styles.css') }}"
+    />
+    <title>RSS Feed Flask</title>
+  </head>
+  <body>
+    {% for source, entries in feeds.items() %}
+    <h2>{{ source }}</h2>
+    <div class="feed">
+      {% for entry in entries %}
+      <div class="item">
+          <a href="{{ entry.link }}">{{ entry.title }}</a><br />
+          <small>{{ entry.published }}</small><br />
+          <p>{{ entry.summary | safe }}</p>
+      </div>
+      {% endfor %}
+  </div>
+    {% endfor %}
+  </body>
+</html>
